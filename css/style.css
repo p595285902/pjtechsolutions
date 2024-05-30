@@ -5,7 +5,9 @@ body {
   background-color: #ffffff;
   overflow-x: hidden;
 }
-
+#about #header-container{
+  background-color: #00204a;
+}
 .layout_padding {
   padding: 90px 0;
 }

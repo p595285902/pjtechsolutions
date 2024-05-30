@@ -8,6 +8,21 @@ function loadHTML(url, containerId) {
             console.error('Error loading HTML:', error);
         });
 }
+function setActiveMenu(){
+    var currentPage = window.location.pathname;
+
+    // Remove leading slash
+    currentPage = currentPage.replace(/^\//, '');
+
+    // Remove trailing slash
+    currentPage = currentPage.replace(/\/$/, '');
+
+    // Remove file extension if present
+    currentPage = currentPage.replace(/\.[^/.]+$/, '');
+    console.log(currentPage)
+    // Add active class to corresponding menu item
+    document.getElementById('menu-' + currentPage).classList.add('active');
+}
 
 function loadHead() {
     fetch("common/head.html")
@@ -70,7 +85,7 @@ function loadFooter() {
 Promise.all([
     loadHead(),
     loadFooter(),
-    loadHTML('common/header.html', 'header-container')
+    loadHTML('common/header.html', 'header-container').then( res=>setActiveMenu())
 ]).then(() => {
     console.log('Head, footer, and header loaded successfully.');
 });
