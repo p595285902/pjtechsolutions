@@ -20,6 +20,8 @@ function setActiveMenu(){
     // Remove file extension if present
     currentPage = currentPage.replace(/\.[^/.]+$/, '');
     console.log(currentPage)
+    if(!currentPage)
+        currentPage='index'
     // Add active class to corresponding menu item
     document.getElementById('menu-' + currentPage).classList.add('active');
 }
