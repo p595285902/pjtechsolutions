@@ -85,7 +85,9 @@ function loadFooter() {
 Promise.all([
     loadHead(),
     loadFooter(),
-    loadHTML('common/header.html', 'header-container').then( res=>setActiveMenu())
+    loadHTML('common/header.html', 'header-container').then( res=>setActiveMenu()),
+    loadHTML('common/service.html', 'service-container'),
+    loadHTML('common/about.html', 'about-container')
 ]).then(() => {
     console.log('Head, footer, and header loaded successfully.');
 });
