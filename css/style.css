@@ -930,3 +930,8 @@ a:focus {
   color: inherit;
 }
 /*# sourceMappingURL=style.css.map */
+
+/** google material - icons */
+#why-container .material-symbols-outlined {
+  font-size:50px;
+}
